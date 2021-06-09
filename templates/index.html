@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% include "header.html" %}
+<head>
+    <title>Dairy Dash</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <section id="featureSec">
+        <div class="container">
+            <h1>
+                Worried about the short shelf life of your products? Worry no more because Dairy Dash has got you covered!
+            </h1>
+        </div>
+        </section>
+        <div class="container">
+        <section id="mainSec">
+            <img src="{{ url_for('static', filename='images/cheese.jpg') }}" alt="Could Not Be Found" width="200" height="200">
+            <img src="{{ url_for('static', filename='images/milk tea.png') }}" alt="Could Not Be Found" width="200" height="200">
+            <img src="{{ url_for('static', filename='images/eggs.jpg') }}" alt="Could Not Be Found" width="200" height="200">
+            <p style = "color:chocolate">
+                Dairy Dash partners up with local farmers for fresh and organic supply of dairy products. We ensure the our customers get only the best quality and premium products.
+            </p>
+        </section>
+        <aside id="sideBar">
+            <p style = "color:chocolate">
+                Dairy Dash delivers fresh and organic dairy products on demand, right at your doorstep!
+            </p>
+        </aside>
+    </div>
+
+    <div class="clr"></div>
+{% include "footer.html" %}

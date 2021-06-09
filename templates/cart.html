@@ -1,0 +1,21 @@
+{% include "header.html" %}
+            {% if session["cart"] is defined %}
+            <form action="/updateQty" method="POST">
+              <table>
+              <tr><th>Name</th><th>Quantity</th><th>Subtotal</th><th>Qty Add</th><th></th></tr>
+              {% for item in session["cart"].values() %}
+                          <tr><td>{{ item["name"] }}</td><td>{{ item["qty"] }}</td><td>{{ item["subtotal"] }}</td><td><input type = "number " name = "{{ item['code'] }}"></td><td><a href = "/removeItem?code={{ item['code'] }}" style = "color:black;text-decoration:none"> x </a></tr>
+              {% endfor %}
+              <tr><td colspan=2><b>Total</b></td><td><b>{{ session["cart"].values()|sum(attribute="subtotal") }}</b></td><td>{% if session["cart"]|length > 0 %}<button type = "submit" class = "btn btn-secondary btn-sm"> Update Quantity </button></td>{% endif %}</tr>
+              </table>
+            </form>
+            <form action ="/checkout" method = "GET">
+              <textarea name = "address" placeholder = "Address" rows = "4" cols = "53"></textarea>
+              <br>
+              <input type = "submit" class = "btn btn-secondary btn-sm" value = "Checkout">
+            </form>
+            {% else %}
+            <div>Your cart is empty</div>
+            {% endif %}
+            <p> {{ qty }} </p>
+{% include "footer.html" %}

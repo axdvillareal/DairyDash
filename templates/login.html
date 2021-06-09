@@ -1,0 +1,17 @@
+{% include "header.html" %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styleProducts.css') }}">
+<form action="/auth" method="POST">
+   <div>
+     Email address
+   </div>
+   <input type="text" name="username"></input>
+   <div>
+     Password
+   </div>
+   <input type="password" name="password"></input>
+   <div>
+   <input type="submit" value="Login"/>
+   </div>
+   <p style = "color:red;"> {{ page }} </p>
+</form>
+{% include "footer.html" %}

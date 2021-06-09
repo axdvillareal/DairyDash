@@ -1,0 +1,9 @@
+{% include "header.html" %}
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styleProducts.css') }}">
+        <table class = "table-striped">
+            <tr><th></th><th>Name</th><th>Price</th></tr>
+            {% for product in product_list %}
+                        <tr><td><a href="productdetails?code={{product['code']}}"><img src = "{{ url_for('static', filename=product['image']) }}" class = "productimage" width = "200px" style = "border-radius: 12px"></a></td><td>{{product["name"]}}</td><td>{{product["price"]}}</td></tr>
+            {% endfor %}
+        </table>
+{% include "footer.html" %}
